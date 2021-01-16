@@ -273,7 +273,7 @@ always @(posedge clk_40) begin
         ce_pix <= !div;
 end
 
-wire no_rotate = status[2] & ~direct_video;
+wire no_rotate = status[2] | direct_video;
 wire rotate_ccw = 1'b1;
 screen_rotate screen_rotate (.*);
 
